@@ -25,7 +25,7 @@ if user_input:
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             try:
-                res = requests.post("http://localhost:8000/chat", json={"message": user_input})
+                res = requests.post("https://calendar-backend-gxmj.onrender.com/chat", json={"message": user_input})
                 reply = res.json().get("response", "❌ No response.")
             except Exception as e:
                 reply = f"❌ Error: {e}"
