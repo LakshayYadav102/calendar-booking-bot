@@ -10,8 +10,8 @@ app = FastAPI()
 
 class BookingRequest(BaseModel):
     summary: str
-    date: str  # format: YYYY-MM-DD
-    time: str  # format: HH:MM (24h)
+    date: str  
+    time: str  
 
 @app.get("/")
 def read_root():
@@ -63,4 +63,5 @@ class ChatRequest(BaseModel):
 def chat(req: ChatRequest):
     reply = chat_with_agent(req.message)
     return {"response": reply}
+    
 

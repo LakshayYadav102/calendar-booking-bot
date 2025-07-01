@@ -36,9 +36,9 @@ if user_input:
                     json={"message": user_input},
                     timeout=30
                 )
-                reply = res.json().get("response", "❌ No response.")
+                reply = res.json().get("response", " No response.")
             except Exception as e:
-                reply = f"❌ Error: {e}"
+                reply = f" Error: {e}"
 
             st.markdown(reply)
             st.session_state.messages.append({"role": "assistant", "content": reply})
