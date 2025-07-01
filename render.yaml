@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: calendar-backend
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn backend.main:app --host 0.0.0.0 --port 8000"
+    envVars:
+      - key: CALENDAR_ID
+        value: lakshay9718@gmail.com
+      - key: GOOGLE_API_KEY
+        value: AIzaSyCDEcXP5xnMEjjfXcBjN_5-0IApQemcYvs
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        value: service_account.json
